@@ -1,0 +1,74 @@
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+#include <math.h>
+using namespace std;
+
+class Vector
+{
+protected:	float x1, x2, y1, y2;
+			
+
+public:
+
+	
+
+    Vector()
+	{
+		cout << "vvedite koordinati nachala vectora:";
+			cin >> x1 >> y1;
+			cout << "vvedite koordinati konca vectora:";
+			cin >> x2 >> y2;
+	}
+	
+	
+	float modul()
+	{
+		return (sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2)));
+	}
+
+	void vivodmodula()
+	{
+		cout << "modul vectora:" << modul();
+	}
+
+
+};
+
+class Gector :public Vector
+{
+private:
+	float z1,z2;
+public:
+	
+	float Modul();
+	void Pok();
+    Gector()
+	{
+		cout << "vvedite koordinati z" << endl;
+		cin >> z1 >> z2;
+	}
+
+};
+
+float Gector::Modul();
+{
+		return (sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2)+ pow(z2 - z1, 2)));
+}
+void Gector::Pok()
+{
+	cout << "modul gectora:" << Modul();
+}
+
+int main()
+{
+	Vector vec;
+	vec.vivodmodula();
+
+	Gector Gec;
+	Gec.Modul();
+	Gec.Pok();
+
+	system("pause");
+	return 0;
+}

@@ -1,0 +1,63 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+#include <math.h>
+using namespace std;
+
+class vector
+{
+private:	float x1, x2, y1, y2;   
+			int *m;
+			int abscissa, ordinata, n;
+			
+public:
+	
+	vector operator +(vector &v1);
+	    
+	    vector()
+		{
+		  
+		   for (i = 0; i < n; i++)
+		   {
+			   cout << "vvedite koordinati vectora:";
+			   cin >> abscissa >> ordinata;
+		   }
+
+		}
+	   Vector ::operator +(Vector &v1)
+	   {
+		   Vector tmp(abscissa, ordinata);
+		   int i;
+		   for (i = 0; i < 2; i++)
+		   {
+			   tmp.m[i] = m[i] + v1.m[i];
+		   }
+		   return tmp;
+
+	   }
+		float modul()
+		{
+			return (sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2)));
+		}
+		
+		void vivodmodula()
+		{
+			cout << "modul vectora:" << modul();
+		}
+
+	
+};
+	
+
+
+int main()
+{
+	vector vec;
+	vec.modul();
+	vec.vivodmodula();
+	
+	system("pause");
+    return 0;
+}
+
